@@ -1,0 +1,52 @@
+{% extends 'main/base_stuff.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'style_main.css' %}">
+{% endblock %}
+
+{% block title %}
+Для девочек
+{% endblock %}
+
+{% block content %}
+<div id="sidebar">
+        <h3>Категории</h3>
+        <ul>
+            {% if not category %}
+                <li class="selected">
+                     <a href="{% url 'girls' %}">All</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'girls' %}">All</a>
+                </li>
+            {% endif %}
+            {% for c in categories %}
+                {% if category.slug == c.slug %}
+                    <li class="selected">
+                        <a href="{{ c.girls_get_absolute_url }}">{{ c.name }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ c.girls_get_absolute_url }}">{{ c.name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="main" class="product-list">
+        <h1>{% if category %}{{ category.name }}{% else %}Товары{% endif %}</h1>
+        {% for product in products %}
+        {% if product.gender == "girls" %}
+            <div class="item">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                </a>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                {{ product.price }}руб.
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

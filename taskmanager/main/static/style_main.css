@@ -1,0 +1,419 @@
+
+#logo_img{
+	user-select: none;
+	width: 10%;
+	height: 60%;
+	margin: 15px 45% 0 45%;
+
+}
+
+#header{
+	background-image: url(img/bigstock.jpg);
+	height: 200px;
+	width: 100%;
+	z-index: 3;
+    position: fixed;
+    top: 0;
+}
+
+nav {
+	padding: 0;
+    margin: 7px 0px 0px 0px;
+    background-color: black;
+    user-select: none;
+}
+
+nav ul{
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+/* убираем отступы и поля, а также list-style для "ul", 
+ * и добавляем "position:relative" */
+#main_nav {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    }
+
+/* применяем inline-block позиционирование к элементам навигации */
+#main_nav li {
+    margin: 0px -5px 0 0;
+    display:inline-block;
+    background-color: red;
+    }
+
+/* стилизуем ссылки */
+#main_nav a {
+    display:block;
+    padding: 0 10px 5px 10px;
+    color:#FFF;
+    font-size:20px;
+    line-height: 49px;
+    text-decoration:none;
+    user-select: none;
+    text-align: center;
+}
+
+/* изменяем цвет фона при наведении курсора */
+#main_nav a:hover {
+    background-color: #B22222;
+}
+#main_nav a:active {
+	background-color: #8B0000;
+}
+
+#main_nav ul {
+	margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+			
+/* отображаем выпадающий список при наведении */
+#main_nav li:hover > ul {
+    display:inherit;
+}
+
+/* первый уровень выпадающего списка */
+#main_nav ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+
+#main_nav ul ul {
+	position: absolute;
+	top:0;
+	left:100%;
+}
+
+*{box-sizing: border-box;}
+form {
+      position: relative;
+      width: 50%;
+      display: inline-block;
+}
+input, button {
+      border: none;
+      outline: none;
+}
+input {
+      width: 89.798%;
+      height: 42px;
+      background: #F9F0DA;
+      padding-left: 15px;
+}
+button {
+      height: 42px;
+      width: 42px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+}
+button:before {
+      content: "\f002";
+      font-family: FontAwesome;
+      font-size: 16px;
+      color: red;
+}
+
+#shop_cart {
+      margin: 0 5px 0 5px;
+      height: 42px;
+      line-height: 30px;
+      width: 42px;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+}
+#shop_cart:before {
+      content: "\f07a";
+      font-family: FontAwesome;
+      font-size: 16px;
+      color: red;
+}
+
+#content{
+	background-color: white;
+	width: 100%;
+    padding-top: 200px;
+    min-height: 100%;
+}
+
+#content_index{
+    background-color: white;
+	width: 100%;
+    padding-top: 200px;
+    min-height: 100%;
+    height: 1px;
+}
+
+#slides {
+    position: relative;
+    height: 100%;
+    width: 60%;
+    padding: 0;
+    margin: 0 0;
+    list-style-type: none;
+    display: block;
+    float: left;
+}
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+.slide:nth-of-type(1) {
+    background: url(img/slides/pexels-andrea-piacquadio-837140.jpg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.slide:nth-of-type(2) {
+    background: url(img/slides/pexels-evg-kowalievska-1158670.jpg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.slide:nth-of-type(3) {
+    background: url(img/slides/pexels-spencer-selover-428340.jpg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.slide:nth-of-type(4) {
+    background: url(img/slides/pexels-marcelo-chagas-2229490.jpg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.slide:nth-of-type(5) {
+    background: url(img/slides/pexels-elle-hughes-1549200.jpg) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+#main_text{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    position: relative;
+    padding: 0 0;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#main_text h1, h2, h4{
+    text-align: center;
+    width:100%;
+}
+
+#footer{
+    display: flex;
+	background-color: black;
+	height: 100px;
+	width: 100%;
+}
+
+#copyright{
+	color: white;
+}
+
+body, html {
+    font-family: 'Nunito', sans-serif; 
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+@font-face{
+	font-family: 'Nunito', sans-serif;
+	src: url(Nunito-Regular.ttfs);
+}
+
+#sidebar{
+    padding: 10px 0 0 0;
+    float: left;
+    margin: 0;
+    width: 20%;
+    position: relative;
+    min-height: 100%;
+}
+
+#sidebar h3{
+    text-align: center;
+}
+
+#sidebar ul{
+    list-style: none;
+    position: relative;
+    width: 90%;
+}
+
+#sidebar a{
+    text-decoration:none;
+    user-select: none;
+    color: black;
+    line-height: 32px;
+    padding: 5px 10px 5px 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+#sidebar .selected a{
+    color: white;
+    background-color: black;
+}
+
+#main{
+    padding: 0;
+    float: right;
+    margin: 0;
+    width: 80%;
+    height: 100%;
+}
+
+
+.item{
+    display: inline-block;
+    text-align: center;
+
+}
+
+#main .item img{
+    object-fit: cover;
+    object-position: bottom;
+    height: 350px;
+    width: 250px;
+}
+
+.item a{
+
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.product-detail img{
+    object-fit: cover;
+    object-position: bottom;
+    height: 100%;
+    width: 20%;
+    float: left;
+    margin: 3% 0 0 20%;
+}
+
+.product-detail h1{
+    margin: 0 0 0 55%;
+}
+
+.product-detail h2{
+    margin: 0 0 0 55%;
+    text-align: left;
+    width:40%;
+}
+
+.price{
+    margin: 0 0 0 55%;
+    font-size: 30px;
+}
+
+#add{
+    width: 350px;
+    height: 45px;
+    margin: 0 0 0 15%;
+}
+#add_but{
+    margin-left: 20px;
+    width: 150px;
+    background: black;
+    user-select: none;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.description{
+    width: 30%;
+    margin: 0;
+    word-break: break-all;
+    margin: 10px 0 10px 55%;
+}
+
+.cart{
+	width: 100%;
+    height: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+
+}
+
+tbody img{
+    object-fit: cover;
+    object-position: bottom;
+    height: 350px;
+    width: 250px;
+}
+
+thead{
+    background: black;
+    color: white;
+}
+
+thead th{
+    padding: 20px 20px;
+}
+
+#cart_product td{
+    text-align: center;
+}
+
+.total td{
+    padding: 20px 20px;
+}
+
+.total{
+    background: black;
+    color: white;
+}
+
+.remove{
+    background: red;
+    text-decoration: none;
+    user-select: none;
+    color: white;
+    border-radius: 5px;
+    padding: 15px 5px;
+}
+
+.text-right{
+    text-align: center;
+    width: 140px;
+}
+
+.button{
+    background: red;
+    text-decoration: none;
+    user-select: none;
+    color: white;
+    border-radius: 5px;
+    padding: 15px 5px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+	{% block link %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style_main.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div id="header">
+		<img src="{% static 'img/good-mood.png' %}" id="logo_img">
+		<nav>
+			<ul id="main_nav">
+				<li><a href="{% url 'home' %}">Главная</a></li>
+				<!--<form>
+					<input type="text" placeholder="Поиск">
+					<button type="submit"></button>
+				</form>-->
+				<li>
+					<a>Товары ▼</a>
+					<ul>
+						<li><a href="{% url 'men' %}">Для мужщин</a></li>
+						<li><a href="{% url 'women' %}">Для женщин</a></li>
+						<li><a href="{% url 'boys' %}">Для мальчиков</a></li>
+						<li><a href="{% url 'girls' %}">Для девочек</a></li>
+					</ul>
+				</li>
+				<li><a href="{% url 'about' %}">О нас</a></li>
+			</ul>
+			<a href="{% url 'cart_detail' %}"><button type="button" id="shop_cart"></button></a>
+		</nav>
+	</div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+
+	</div>
+	<div id="footer">
+		<span id="copyright">© ООО "GOOD MOOD", 2021</span>
+	</div>
+
+	<noscript>JavaScript не работает в вашем браузере! Включите его для полноценной работы сайта.</noscript>
+	<script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
